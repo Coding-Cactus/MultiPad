@@ -152,6 +152,8 @@ post "/createpad" do
 		return "Pad already exists"
 	end
 
+	cookies["#{@pad_name}_password"] = Pads[@pad_name].password if @has_password != nil
+
 	"/pad/#{@pad_name}"
 end
 
