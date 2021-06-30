@@ -1,0 +1,26 @@
+<header>
+
+	<div id="titleBackButtonContainer">
+
+		<div class="containerChild">
+			<a href="https://multipad.codingcactus.repl.co/#landingPageMain">
+				<button class="landingPageOpenButton backButton">Back</button>
+			</a>
+		</div>
+		
+		<div class="containerChild">
+			<h1 id="padName"><%= @pad.name %></h1>
+		</div>
+
+		<div style="width: 20px" class="containerChild"></div>
+		</div>
+
+	<div id="usersOnlineContainer">
+		<p id="padUsersOnline">Users online: <span id="users-online">loading...</span></p>
+	</div>
+</header>
+
+
+<textarea disabled placeholder="Type here!"><%= @pad.content %></textarea>
+
+<script src="/js/pad.js"></script>

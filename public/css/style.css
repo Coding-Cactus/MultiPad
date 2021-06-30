@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Work+Sans&display=swap');
+
+
+
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline-color: var(--color-gray);
+}
+
+:root {
+	--color-background: #023047;
+	--color-light: #f1faee;
+	--color-dark: #023047;
+	--color-dark-alt: #042535;
+	--color-light-blue: #8ec9e6;
+	--color-light-blue-alt: #7fb4cf;
+	--color-gray: #d9dce0;
+	--color-text-light: #f1faee;
+	--color-text-dark: #023047;
+	--color-text-light-blue: #8ec9e6;
+	--color-text-gray: #d9dce0;
+	--color-link: #553fe8;
+}
+
+
+body, html {
+	font-family: 'Work Sans', sans-serif;
+	background-color: var(--color-background);
+	color: var(--color-text-light);
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+.error {
+	color: #c00;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-weight: 600;
+}
+
+.hidden {
+	height: 0px !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.title {
+	text-align: center;
+	font-size: 50px;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: var(--color-text-dark);
+}
+
+h3 {
+	font-size: 30px;
+	color: var(--color-text-dark);
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+button:hover, input[type="checkbox"] { cursor: pointer; }
+
+
+::selection {
+	background-color: var(--color-dark);
+	color: var(--color-light);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-dark-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-light-blue);
+	border-radius: 4px;
+	border: 1px solid var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-light-blue-alt);
+}

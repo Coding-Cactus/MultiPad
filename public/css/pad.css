@@ -1,0 +1,68 @@
+textarea {
+	width: 100vw;
+	height: 84.25%;
+	padding: 20px;
+	font-family: 'Source Code Pro', monospace;
+	resize: none;
+}
+
+textarea:focus {
+	border-top: 10px solid var(--color-light-blue);
+	outline: none;
+}
+
+header {
+	width: 100%;
+	top: 0;
+	height: 15%;
+}
+
+#padName {
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#titleBackButtonContainer {
+	display: flex;
+	padding-top: 10px;
+}
+
+#usersOnlineContainer {
+	width: max-content;
+	margin: auto;
+}	
+
+#padUsersOnline {
+	text-align: center;
+	color: var(--text-color-gray);
+	margin-bottom: 20px;
+}
+
+.backButton {
+	width: 100px;
+	height: 30px;
+	font-family: 'Work Sans', sans-serif;
+	background-color: var(--color-light-blue);
+	color: var(--color-text-dark) !important;
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
+
+.containerChild {
+	flex: 1;
+}
+
+.good-popup, .bad-popup {
+	position: fixed;
+	bottom: 2vh;
+	left: 2vw;
+	padding: 10px 5px;
+	font-size: 22px;
+	color: #fff;
+	border-radius: 12px;
+}
+
+.bad-popup { background-color: #d62a21; }
+.good-popup { background-color: #1f9724; }

@@ -1,0 +1,124 @@
+<head>
+	<title>MultiPad</title>
+</head>
+
+<section id="landingPageTop">
+	<div id="landingPageMainContainer">
+		<div id="landingPageTitleButtonContainer">
+			<h1 class="title">MultiPad</h1>
+
+			<button onclick="window.location.href='#landingPageMain'" id="start">Start</button>
+		</div>
+
+		<div>
+			<p id="landingPageDescrip">MultiPad ~ A clean, simple, and efficient collaborative workspace.</p>
+			<div id="landingPageFeaturesLinkContainer">
+				<a href="#landingPageFeaturesAnchor" id="landingPageFeaturesLink">See what we offer →</a>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+
+
+<div id="landingPageTransition"></div>
+
+<section id="landingPageMain">
+	<div id="landingPageMainContainer">
+		<form method="post" action="/openpad">
+			<h3>Open Pad</h3>
+			<input name="name" placeholder="What's this pad's name?" required autocomplete="off">
+			<p class="error"></p>
+			<button type="submit" class="landingPageOpenButton" id="startAnchor">Open</button>
+		</form>
+
+		<p id="or">Or</p>
+
+		<form method="post" action="/createpad">
+			<h3>Create Pad</h3>
+			<input type="text" name="name" placeholder="What to call this pad?" required  autocomplete="off">
+			<input type="checkbox" id="password-checkbox" name="has_password"><label for="password-checkbox">Password Protected</label>
+			<input type="password" name="password1" class="hidden password" placeholder="Enter password">
+			<input type="password" name="password2" class="hidden password" placeholder="Re-enter password">
+			<p class="error"></p>
+			<button type="submit" class="landingPageOpenButton">Create</button>
+		</form>
+
+	</div>
+</section>
+
+
+<section id="landingPageFeaturesAnchor"></section>
+
+<section id="landingPageFeatures">
+	<div id="landingPageFeaturesContainer">
+		<h2 id="featureTitle">What we offer:</h2>
+		<div id="featuresContainer">
+
+
+			<div class="featureCard">
+				<div class="titleIconContainer">
+					<h2 class="cardTitle">Collaboration</h2>
+
+					<img src="/media/communityIcon.png" class="featuresIcons"> 
+				</div>
+
+				<p class="cardText">Easily work collaboratively with multiple users able to type onto the same pad with the text updating live.</p>
+			</div>
+
+
+			<div class="featureCard">
+				<div class="titleIconContainer">
+					<h2 class="cardTitle">Security</h2>
+
+					<img src="/media/securityIcon.png" class="featuresIcons"> 
+				</div>
+
+				<p class="cardText">Pads can be password protected for extra security. To enter or join the pad, users will need to enter a password.</p> 
+			</div>
+
+			<div class="featureCard">
+				<div class="titleIconContainer">
+					<h2 class="cardTitle">Storage</h2>
+
+					<img src="/media/storageIcon.png" class="featuresIcons"> 
+				</div>
+
+				<p class="cardText">Each pad can hold up to 500,000 characters, leaving you with plenty of space to work effectively.</p> 
+			</div>
+
+			<div class="featureCard">
+				<div class="titleIconContainer">
+					<h2 class="cardTitle">Design</h2>
+
+					<img src="/media/designIcon.png" class="featuresIcons"> 
+				</div>
+
+				<p class="cardText">With a clean and simple interface, MultiPad is extremely easy and intuitive to use.</p> 
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+<script>
+	document.getElementById("password-checkbox").addEventListener("change",  (e) => {
+		if (e.target.checked) {
+			document.querySelectorAll(".password").forEach(input => {
+				input.className = "password";
+				input.required = true;
+			});
+		} else {
+			document.querySelectorAll(".password").forEach(input => {
+				input.className = "hidden password";
+				input.required = false;
+			});
+		}
+	});
+</script>
+
+
+
