@@ -1,3 +1,4 @@
+require "uri"
 require "json"
 require "mongo"
 require 'bcrypt'
@@ -130,7 +131,7 @@ end
 
 
 post "/createpad" do
-	@pad_name = params[:name]
+	@pad_name = params[:name].gsub(" ", "+")
 	@password1 = params[:password1]
 	@password2 = params[:password2]
 	@has_password = params[:has_password]
@@ -159,7 +160,7 @@ end
 
 
 post "/openpad" do
-	@pad_name = params[:name]
+	@pad_name = params[:name].gsub(" ", "+")
 
 	return "Pad name not provided" if @pad_name.length == 0
 	
@@ -174,7 +175,7 @@ end
 
 
 get "/pad/:name" do
-	@pad_name = params[:name]
+	@pad_name = params[:name].gsub(" ", "+")
 
 	if Pads.include?(@pad_name)
 		@pad = Pads[@pad_name]
@@ -185,17 +186,17 @@ get "/pad/:name" do
 			return 404
 		end
 	end
-	
-	return erb :password if @pad.password != cookies["#{@pad_name}_password"]
+
+	return erb :password if @pad.password != cookies["#{@pad_name.gsub("+", "%2B")}_password"]
 
 	if !request.websocket?
 		erb :pad
 	else
 		request.websocket do |ws|
-			ws.onopen do 
+			ws.onopen do
 				settings.sockets << ws
 				EM.next_tick do
-					settings.sockets.each do |s| 
+					settings.sockets.each do |s|
 						s.send({
 							type: "users_online",
 							num: settings.sockets.length
@@ -242,7 +243,7 @@ get "/pad/:name" do
 				Pads[@pad_name].close if settings.sockets.length == 0
 
 				EM.next_tick do
-					settings.sockets.each do |s| 
+					settings.sockets.each do |s|
 						s.send({
 							type: "users_online",
 							num: settings.sockets.length
