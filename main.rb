@@ -10,12 +10,11 @@ require "sinatra-websocket"
 set :bind, "0.0.0.0"
 set :server, "thin"
 set :sockets, []
-
+set :cookie_options, domain: nil
 
 
 class StorageError < StandardError; end
 class ExistenceError < StandardError; end
-
 
 class Pads
 	@@open_pads = []
