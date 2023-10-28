@@ -10,7 +10,7 @@ gem "json", "~> 2.5"
 
 gem "bcrypt", "~> 3.1"
 
-gem "mongo", "~> 2.14"
+gem "mongo", "~> 2.19"
 
 gem "sinatra", "~> 2.1"
 
